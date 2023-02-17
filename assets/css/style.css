@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sign By Dat */
+.Coding {
+  padding: 4px;
+  text-align: center;
+}
+
+.Coding p {
+  letter-spacing: 5px;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* Container */
+.container {
+  position: relative;
+  height: 100vh;
+  width: 600px;
+  padding: 2rem 0;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Console */
+.music-console {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 600px;
+  background-color: #fff;
+}
+
+/* Playing */
+.music-play .music-img {
+  text-align: center;
+}
+
+.music-play .music-img img {
+  width: 350px;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.music-playing {
+  padding: 10px;
+  text-align: center;
+}
+
+.music-playing h3 {
+  letter-spacing: 3px;
+}
+
+.music-playing p {
+  margin-top: 4px;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.music-control {
+  text-align: center;
+}
+
+/* Begin Slider */
+.control-slider {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.btn-slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 88%; /* Full-width */
+  height: 12px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  /* Add */
+  margin: 28px 0px;
+  border-radius: 10px;
+}
+
+/* Mouse-over effects */
+.btn-slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.btn-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 12px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  background: #000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  /* Add */
+  border-radius: 8px;
+}
+
+.btn-slider::-moz-range-thumb {
+  width: 12px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  background: #000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  /* Add */
+  border-radius: 8px;
+}
+
+/* End Slider */
+
+/* Begin Control Buttons */
+.control-buttons {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.control-buttons .btn {
+  color: #000;
+  display: flex;
+  cursor: pointer;
+}
+
+.control-buttons .btn i {
+  padding: 18px 8px;
+  font-size: 24px;
+  opacity: 0.4;
+  text-align: center;
+}
+
+.control-buttons .btn.active i,
+.control-buttons .btn i:hover {
+  opacity: 1;
+}
+
+.control-buttons .btn-pause {
+  display: none;
+}
+
+.control-buttons.playing .btn-pause {
+  display: inline-block;
+}
+
+.control-buttons.playing .btn-play {
+  display: none;
+}
+
+.control-buttons .btn-toggle-play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: rgb(134, 132, 132);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.control-buttons .btn-toggle-play i {
+  font-size: 58px;
+  opacity: 1;
+}
+
+.control-buttons .btn-toggle-play:hover i {
+  opacity: 0.4;
+}
+
+/* Playlists */
+#playlist {
+  position: absolute;
+  width: 100%;
+  margin-top: 600px;
+  background-color: #fff;
+}
+
+#playlist:active {
+  opacity: 0.7;
+}
+
+#playlist .song {
+  display: block;
+  position: relative;
+  padding: 8px 64px;
+  width: 100%;
+  height: 68px;
+  line-height: 1.8;
+  cursor: pointer;
+}
+
+#playlist .song.active {
+  font-weight: 600;
+  color: #48aee3;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#playlist .song.active .btn-like,
+#playlist .song.active .btn-option {
+  color: #000;
+}
+
+#playlist .song:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#playlist .song .song-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#playlist .song .song-singer {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+#playlist .song .song-btn {
+  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 64px;
+  font-size: 30px;
+  gap: 24px;
+}
+
+#playlist .song .song-btn .btn-chart {
+  display: none;
+}
+
+#playlist .song.active .btn-chart {
+  display: block;
+}
